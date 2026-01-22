@@ -4,10 +4,10 @@
 
 <script>
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  databaseURL: "https://YOUR_PROJECT.firebaseio.com",
-  projectId: "YOUR_PROJECT",
+  apiKey: "AIzaSyBUfLZ0hiR0uPQOSyrgrhBZnHf-h3UxezE",
+  authDomain: "xdevilearning99.firebaseapp.com",
+  databaseURL: "https://xdevilearning99-default-rtdb.firebaseio.com",
+  projectId: "xdevilearning99",
 };
 
 firebase.initializeApp(firebaseConfig);
