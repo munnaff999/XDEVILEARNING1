@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Earning App</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>XDEVIL EARNING</title>
 </head>
 <body>
 
-<h2>Welcome to EarnMoney</h2>
+<h2>Login Test</h2>
+<button id="loginBtn">Login with Google</button>
 
-<div id="loginBox">
-  <button onclick="login()">Login with Google</button>
-</div>
+<p id="status"></p>
 
-<div id="userBox" style="display:none">
-  <p id="userEmail"></p>
-  <a href="offers.html">Install Apps & Earn</a><br>
-  <a href="wallet.html">Wallet</a><br>
-  <a href="withdraw.html">Withdraw</a>
-</div>
+<script type="module">
+  import { auth, provider } from "./assets/js/firebase.js";
+  import { signInWithPopup } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 
-<script type="module" src="assets/js/firebase.js"></script>
-<script type="module" src="assets/js/user.js"></script>
+  const btn = document.getElementById("loginBtn");
+  const status = document.getElementById("status");
+
+  btn.onclick = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        status.innerText = "Login Success: " + result.user.email;
+      })
+      .catch((error) => {
+        status.innerText = error.message;
+      });
+  };
+</script>
+
 </body>
 </html>
