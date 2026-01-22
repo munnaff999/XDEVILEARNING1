@@ -1,5 +1,5 @@
 function completeOffer(amount){
-  const user = firebase.auth().currentUser;
+  const user = firebase.auth().signInWithPopup(provider).currentUser;
   if(!user) return alert("Login first");
 
   firebase.database().ref("users/"+user.uid+"/balance")
